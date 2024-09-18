@@ -17,14 +17,14 @@ export const getAllPost = async ({ limit, category, subCategory }: params) => {
   if (subCategory) {
     query += `&subCategory=${subCategory}`;
   }
-  let data = await fetch(process.env.API_BASE_URL + `/posts?${query}`, {
+  let data = await fetch(process.env.NEXT_PUBLIC_API_URL + `/posts?${query}`, {
     next: { revalidate: 60*15 },
   });
   return await data.json();
 };
 
 export const postDetails = async (e: any) => {
-  const dynamicData = await fetch(`${process.env.API_BASE_URL}/posts/${e}`, {
+  const dynamicData = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/posts/${e}`, {
     next: { revalidate: 60*15 },
   });
   return dynamicData.json();
