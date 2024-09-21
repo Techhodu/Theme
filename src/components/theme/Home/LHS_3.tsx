@@ -9,6 +9,7 @@ type Props = {
   limit?: number;
   category?: string;
   slug?: string;
+  category_title: string;
 };
 
 export default async function LHS_3(Props: Props) {
@@ -25,7 +26,7 @@ export default async function LHS_3(Props: Props) {
     <div className="bg-muted/85 p-3 shadow-lg">
       <Link className="col-span-2" href={`/${Props?.slug}`}>
         <div className="flex w-full items-center justify-between">
-          <h3 className="text-2xl font-semibold">India</h3>
+          <h3 className="text-2xl font-semibold">{Props?.category_title}</h3>
           <div className="text-primary">View More</div>
         </div>
       </Link>

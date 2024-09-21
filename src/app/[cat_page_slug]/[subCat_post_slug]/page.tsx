@@ -7,6 +7,7 @@ import { itemFinder } from "@/lib/finder";
 import { getAllPost, getStaticPages, postDetails } from "@/services";
 import Blocks from "@/components/editorjs";
 import cover from "@/assets/images/cover.png";
+import logo from "@/assets/images/logo.png";
 import {
   Pagination,
   PaginationContent,
@@ -17,6 +18,27 @@ import {
   PaginationPrevious,
 } from "@/components/ui/pagination";
 import Image from "next/image";
+import RHS_wrapper from "@/components/theme/wrappers/RHS_wrapper";
+import type { Metadata, ResolvingMetadata } from "next";
+
+export async function generateMetadata(
+  { params, searchParams }: Props,
+  parent: ResolvingMetadata,
+): Promise<Metadata> {
+  // read route params
+  const subCat_post_slug = params.subCat_post_slug;
+  const subCatPostData = await itemFinder(subCat_post_slug, 2, "object");
+
+  // optionally access and extend (rather than replace) parent metadata
+  const previousImages = (await parent).openGraph?.images || [];
+
+  return {
+    title: subCatPostData.title,
+    openGraph: {
+      images: [subCatPostData?.image?.url || logo],
+    },
+  };
+}
 
 type PostsDataType = {
   posts?: any[];
@@ -37,7 +59,8 @@ type Props = {
     page?: string;
   };
 };
-export const revalidate = 60*15
+
+export const revalidate = 60 * 15;
 const Page: React.FC<Props> = async ({ params, searchParams }) => {
   const currentListPage = Number(searchParams?.page) || 1;
 
@@ -84,9 +107,13 @@ const Page: React.FC<Props> = async ({ params, searchParams }) => {
                   )}
 
                   {/* First Page Link */}
-                  <PaginationItem>
-                    <PaginationLink href={`/${catPageSlug}`}>1</PaginationLink>
-                  </PaginationItem>
+                  {currentListPage !== 1 && (
+                    <PaginationItem>
+                      <PaginationLink href={`/${catPageSlug}`}>
+                        1
+                      </PaginationLink>
+                    </PaginationItem>
+                  )}
 
                   {/* Display Previous Page Numbers and Ellipses */}
                   {currentListPage > 2 && (
@@ -214,10 +241,7 @@ const Page: React.FC<Props> = async ({ params, searchParams }) => {
           </main>
         )}
 
-        <div className="col-span-3 flex flex-col gap-3 md:flex-row lg:col-span-1 lg:flex-col">
-          <RHS_1 />
-          <RHS_1 />
-        </div>
+        <RHS_wrapper />
       </div>
     </>
   );

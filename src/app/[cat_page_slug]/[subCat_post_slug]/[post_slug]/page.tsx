@@ -8,10 +8,10 @@ import List from "@/components/theme/List";
 import Blocks from "@/components/editorjs";
 import { itemFinder } from "@/lib/finder";
 import cover from "@/assets/images/cover.png";
+import RHS_wrapper from "@/components/theme/wrappers/RHS_wrapper";
 type Props = any;
 
-
-export const revalidate = 60*15
+export const revalidate = 60 * 15;
 export default async function page({ params }: Props) {
   const post_slug = params?.post_slug;
   const post = await itemFinder(post_slug, 3, "object");
@@ -69,10 +69,7 @@ export default async function page({ params }: Props) {
             </div>
           </main>
         )}
-        <div className="col-span-3 flex flex-col gap-3 md:flex-row lg:col-span-1 lg:flex-col">
-          <RHS_1 />
-          <RHS_1 />
-        </div>
+        <RHS_wrapper />
       </div>
     </>
   );

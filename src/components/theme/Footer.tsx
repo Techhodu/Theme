@@ -46,16 +46,16 @@ export async function Footer({}: Props) {
           <div className="space-y-4">
             <h4 className="text-lg font-semibold">About</h4>
             <p className="text-sm leading-relaxed">
-              Ishow Speare News is a leading source of news and information,
+              Khabartaazgi News is a leading source of news and information,
               providing in-depth coverage of the latest events and trends.
             </p>
           </div>
           <div className="space-y-4">
             <h4 className="text-lg font-semibold">Contact</h4>
             <p className="text-sm leading-relaxed">
-              Email: info@ishowspearenews.com
+              support@techhodu.com
               <br />
-              Phone: 555-555-5555
+              Phone: +91 7263025531
             </p>
           </div>
           <div className="space-y-4">
@@ -94,7 +94,7 @@ export async function Footer({}: Props) {
         </div>
 
         <div className="mt-8 flex flex-row justify-between border-t pt-4 text-sm text-muted-foreground">
-          <p> &copy; 2024 Ishow Speare News. All rights reserved.</p>
+          <p> &copy; 2024 Khabartaazgi News. All rights reserved.</p>
           <ModeToggle />
         </div>
       </div>

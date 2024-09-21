@@ -8,8 +8,9 @@ import Image from "next/image";
 import { getCategories, getAllPost } from "@/services";
 
 import BreadcrumbWraper from "@/components/theme/BreadcrumbWraper";
+import RHS_wrapper from "@/components/theme/wrappers/RHS_wrapper";
 
-export const revalidate = 60*15
+export const revalidate = 60 * 15;
 
 export default async function Home() {
   const categoriesData = await getCategories();
@@ -37,8 +38,9 @@ export default async function Home() {
                   <LHS_1
                     key={index}
                     limit={5}
-                    category={category._id}
-                    slug={category.slug}
+                    category={category?._id}
+                    slug={category?.slug}
+                    category_title={category?.title}
                   />
                 );
               case 1:
@@ -48,6 +50,7 @@ export default async function Home() {
                     limit={4}
                     category={category._id}
                     slug={category.slug}
+                    category_title={category?.title}
                   />
                 );
               case 2:
@@ -57,6 +60,7 @@ export default async function Home() {
                     limit={6}
                     category={category._id}
                     slug={category.slug}
+                    category_title={category?.title}
                   />
                 );
               default:
@@ -64,10 +68,7 @@ export default async function Home() {
             }
           })}
         </div>
-        <div className="col-span-3 flex flex-col gap-3 md:flex-row lg:col-span-1 lg:flex-col">
-          <RHS_1 limit={6} />
-          <RHS_1 limit={6} />
-        </div>
+        <RHS_wrapper />
       </div>
     </>
   );

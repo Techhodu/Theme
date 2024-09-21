@@ -15,6 +15,7 @@ import {
   PaginationNext,
   PaginationPrevious,
 } from "@/components/ui/pagination";
+import RHS_wrapper from "@/components/theme/wrappers/RHS_wrapper";
 
 type PostsDataType = {
   posts?: any[];
@@ -40,7 +41,7 @@ type Props = {
   };
 };
 
-export const revalidate = 60*15
+export const revalidate = 60 * 15;
 
 const Page: React.FC<Props> = async ({ params, searchParams }) => {
   const currentListPage = Number(searchParams?.page) || 1;
@@ -87,9 +88,13 @@ const Page: React.FC<Props> = async ({ params, searchParams }) => {
                   )}
 
                   {/* First Page Link */}
-                  <PaginationItem>
-                    <PaginationLink href={`/${catPageSlug}`}>1</PaginationLink>
-                  </PaginationItem>
+                  {currentListPage !== 1 && (
+                    <PaginationItem>
+                      <PaginationLink href={`/${catPageSlug}`}>
+                        1
+                      </PaginationLink>
+                    </PaginationItem>
+                  )}
 
                   {/* Display Previous Page Numbers and Ellipses */}
                   {currentListPage > 2 && (
@@ -176,10 +181,7 @@ const Page: React.FC<Props> = async ({ params, searchParams }) => {
           </main>
         )}
 
-        <div className="col-span-3 flex flex-col gap-3 md:flex-row lg:col-span-1 lg:flex-col">
-          <RHS_1 />
-          <RHS_1 />
-        </div>
+        <RHS_wrapper />
       </div>
     </>
   );
