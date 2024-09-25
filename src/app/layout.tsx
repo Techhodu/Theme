@@ -7,13 +7,14 @@ import { Header } from "@/components/theme/Header";
 import { Footer } from "@/components/theme/Footer";
 import Ticker from "@/components/theme/Ticker";
 import { GoogleAnalytics } from "@next/third-parties/google";
-import logo from "@/assets/images/logo.png";
+import icon from "@/assets/images/icon.png";
 import type { ResolvingMetadata } from "next";
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
-  title: "Create Next App",
-  description: "Khabartaazgi Newsis a leading source of news and information, providing in-depth coverage of the latest events and trends.",
+  title: "Khabartaazgi: News That Matters, Stories That Inspire",
+  description:
+    "Khabartaazgi Newsis a leading source of news and information, providing in-depth coverage of the latest events and trends.",
   openGraph: {
     images: [logo.src],
   },
