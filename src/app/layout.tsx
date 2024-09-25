@@ -16,7 +16,7 @@ export const metadata: Metadata = {
   description:
     "Khabartaazgi Newsis a leading source of news and information, providing in-depth coverage of the latest events and trends.",
   openGraph: {
-    images: [logo.src],
+    images: [icon.src],
   },
 };
 // const Layout = ({ children }: LayoutProps): JSX.Element => {
