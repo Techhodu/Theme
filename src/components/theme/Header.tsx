@@ -153,7 +153,7 @@ export async function Header({}: Props) {
           <SheetHeader>
             <div className="flex">
               <Image
-                className="h-8 w-8 object-contain my-3"
+                className="h-8 w-8 object-contain mx-3"
                 width={80}
                 height={80}
                 src={icon}
