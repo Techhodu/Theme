@@ -14,7 +14,7 @@ const inter = Inter({ subsets: ["latin"] });
 export const metadata: Metadata = {
   title: "Khabartaazgi: News That Matters, Stories That Inspire",
   description:
-    "Khabartaazgi Newsis a leading source of news and information, providing in-depth coverage of the latest events and trends.",
+    "Khabartaazgi News is a leading source of news and information, providing in-depth coverage of the latest events and trends.",
   openGraph: {
     images: [icon.src],
   },
