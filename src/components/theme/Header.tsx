@@ -151,9 +151,9 @@ export async function Header({}: Props) {
         </SheetTrigger>
         <SheetContent className="overflow-auto">
           <SheetHeader>
-            <div>
+            <div className="flex">
               <Image
-                className="h-4 w-4 object-contain"
+                className="h-8 w-8 object-contain my-3"
                 width={80}
                 height={20}
                 src={icon}
