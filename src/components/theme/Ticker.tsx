@@ -20,7 +20,7 @@ export default async function Ticker({}: Props) {
     <div className="flex h-7 w-full items-center overflow-hidden bg-blue-300">
       <div className="relative top-0 flex min-w-fit border-r-2 bg-red-600 p-3 font-semibold">
         <TrendingUp className="mr-2" />
-        <div className="none md:block"> Breaking News</div>
+        <div className="hidden md:block"> Breaking News</div>
       </div>
 
       <div className="overflow-x-hidden">
