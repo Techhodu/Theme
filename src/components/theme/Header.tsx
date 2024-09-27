@@ -163,34 +163,40 @@ export async function Header({}: Props) {
             </div>
             <ul id="side-menu" className="float-none flex w-full flex-col">
               <li className="relative">
-                <Link
-                  href={`/`}
-                  className="block border-b border-muted px-5 py-2 hover:bg-muted/85"
-                >
-                  Home
-                </Link>
+                <SheetClose asChild>
+                  <Link
+                    href={`/`}
+                    className="block border-b border-muted px-5 py-2 hover:bg-muted/85"
+                  >
+                    Home
+                  </Link>
+                </SheetClose>
               </li>
               {sortedCategories.map((category: any, index: number) => {
                 // Your code to handle each category
 
                 return category.subCategories.length <= 0 ? (
                   <li className="relative" key={index}>
-                    <Link
-                      href={`/${category.slug}`}
-                      className="block border-b border-muted px-5 py-2 hover:bg-muted/85"
-                    >
-                      {category.title}
-                    </Link>
+                    <SheetClose asChild>
+                      <Link
+                        href={`/${category.slug}`}
+                        className="block border-b border-muted px-5 py-2 hover:bg-muted/85"
+                      >
+                        {category.title}
+                      </Link>
+                    </SheetClose>
                   </li>
                 ) : (
                   <li className="dropdown group relative" key={index}>
                     <div className="flex flex-row items-center justify-between">
-                      <Link
-                        className="block w-full border-b border-muted px-5 py-2 hover:bg-muted/85"
-                        href={`/${category.slug}`}
-                      >
-                        {category.title}
-                      </Link>
+                      <SheetClose asChild>
+                        <Link
+                          className="block w-full border-b border-muted px-5 py-2 hover:bg-muted/85"
+                          href={`/${category.slug}`}
+                        >
+                          {category.title}
+                        </Link>
+                      </SheetClose>
                       <ChevronUp className="hidden group-hover:block" />
                       <ChevronDown className="block group-hover:hidden" />
                     </div>
@@ -202,12 +208,14 @@ export async function Header({}: Props) {
                       {category?.subCategories.map(
                         (subCategory: any, subIndex: any) => (
                           <li className="subdropdown relative" key={subIndex}>
-                            <Link
-                              className="block w-full border-b border-muted px-5 py-2 hover:bg-muted/85"
-                              href={`/${category.title}/${subCategory.slug}`}
-                            >
-                              {subCategory.title}
-                            </Link>
+                            <SheetClose asChild>
+                              <Link
+                                className="block w-full border-b border-muted px-5 py-2 hover:bg-muted/85"
+                                href={`/${category.title}/${subCategory.slug}`}
+                              >
+                                {subCategory.title}
+                              </Link>
+                            </SheetClose>
                           </li>
                         )
                       )}
