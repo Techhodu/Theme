@@ -14,13 +14,13 @@ export default async function Ticker({}: Props) {
     posts?.map(async (post: any) => {
       const url = await buildUrl(post?._id);
       return { ...post, url };
-    }),
+    })
   );
   return (
     <div className="flex h-7 w-full items-center overflow-hidden bg-blue-300">
       <div className="relative top-0 flex min-w-fit border-r-2 bg-red-600 p-3 font-semibold">
         <TrendingUp className="mr-2" />
-        Breaking News
+        <div className="none md:block"> Breaking News</div>
       </div>
 
       <div className="overflow-x-hidden">
