@@ -155,7 +155,7 @@ export async function Header({}: Props) {
               <Image
                 className="h-8 w-8 object-contain my-3"
                 width={80}
-                height={20}
+                height={80}
                 src={icon}
                 alt="alt"
               ></Image>{" "}
