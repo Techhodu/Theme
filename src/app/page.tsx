@@ -57,7 +57,7 @@ export default async function Home() {
                 return (
                   <LHS_3
                     key={index}
-                    limit={6}
+                    limit={5}
                     category={category._id}
                     slug={category.slug}
                     category_title={category?.title}
@@ -67,7 +67,7 @@ export default async function Home() {
                 return (
                   <LHS_3
                     key={index}
-                    limit={6}
+                    limit={5}
                     category={category._id}
                     slug={category.slug}
                     category_title={category?.title}
