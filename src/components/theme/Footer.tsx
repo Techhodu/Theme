@@ -95,7 +95,7 @@ export async function Footer({}: Props) {
         </div>
 
         <div className="mt-8 flex flex-row justify-between border-t pt-4 text-sm text-muted-foreground">
-          <p> &copy; 2024 Khabartaazgi News. All rights reserved.</p>
+          <p> &copy; 2024 Techhodu. All rights reserved.</p>
           <ModeToggle />
         </div>
       </div>
