@@ -150,7 +150,7 @@ export async function Header({}: Props) {
         </SheetTrigger>
         <SheetContent className="overflow-auto">
           <SheetHeader>
-            <SheetTitle>Welcome to  Khabartaazgi</SheetTitle>
+            <SheetTitle>Welcome to Khabartaazgi</SheetTitle>
             <ul id="side-menu" className="float-none flex w-full flex-col">
               <li className="relative">
                 <Link
@@ -206,9 +206,9 @@ export async function Header({}: Props) {
                 );
               })}
             </ul>
-            <SheetDescription>
-              This menu is catain section and subsection
-            </SheetDescription>
+            {/* <SheetDescription>
+             
+            </SheetDescription> */}
           </SheetHeader>
         </SheetContent>
       </Sheet>

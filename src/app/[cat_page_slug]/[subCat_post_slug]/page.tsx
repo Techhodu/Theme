@@ -215,7 +215,7 @@ const Page: React.FC<Props> = async ({ params, searchParams }) => {
             <Image
               src={post?.image?.url || cover}
               alt={post?.image?.title || "Article Image"}
-              className=""
+              className=" w-full"
               width={700}
               height={400}
               priority
