@@ -63,6 +63,16 @@ export default async function Home() {
                     category_title={category?.title}
                   />
                 );
+              case 3:
+                return (
+                  <LHS_3
+                    key={index}
+                    limit={6}
+                    category={category._id}
+                    slug={category.slug}
+                    category_title={category?.title}
+                  />
+                );
               default:
                 return null;
             }

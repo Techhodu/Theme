@@ -20,10 +20,11 @@ import {
 import Image from "next/image";
 import RHS_wrapper from "@/components/theme/wrappers/RHS_wrapper";
 import type { Metadata, ResolvingMetadata } from "next";
+import { formatDateTime } from "@/lib/formate";
 
 export async function generateMetadata(
   { params, searchParams }: Props,
-  parent: ResolvingMetadata,
+  parent: ResolvingMetadata
 ): Promise<Metadata> {
   // read route params
   const subCat_post_slug = params.subCat_post_slug;
@@ -203,10 +204,13 @@ const Page: React.FC<Props> = async ({ params, searchParams }) => {
             <p className="mt-2 pb-2 font-semibold">
               Auther :
               <a className="font-normal" href="/category/politics">
-                Ritik
+                Kishor
               </a>
               , Last Updated :
-              <span className="font-normal"> 30 Jan 2024 04:07 PM</span>
+              <span className="font-normal">
+               
+                {formatDateTime(post?.publicAt)}
+              </span>
             </p>
             <Image
               src={post?.image?.url || cover}
