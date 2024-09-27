@@ -4,6 +4,7 @@ import { ChevronDown, ChevronUp, Menu, Search } from "lucide-react";
 import logo from "../../assets/images/logo.png";
 import logo1 from "../../assets/images/logo1.png";
 import img from "../../assets/images/img.jpg";
+import icon from "@/assets/images/icon.png";
 
 import {
   Sheet,
@@ -51,12 +52,12 @@ export async function Header({}: Props) {
 
   const filteredCategories: any[] = categoriesWithSubCat.filter(
     (category) =>
-      category.visibility === "both" || category.visibility === "mainMenu",
+      category.visibility === "both" || category.visibility === "mainMenu"
   );
 
   // Sort the filtered categories by homeHierarchy in increasing order
   const sortedCategories: any[] = filteredCategories.sort(
-    (a, b) => a.menuHierarchy - b.menuHierarchy,
+    (a, b) => a.menuHierarchy - b.menuHierarchy
   );
 
   return (
@@ -125,7 +126,7 @@ export async function Header({}: Props) {
                             {subCategory.title} {/* Adjust this as needed */}
                           </Link>
                         </li>
-                      ),
+                      )
                     )}
                   </ul>
                 </li>
@@ -150,7 +151,16 @@ export async function Header({}: Props) {
         </SheetTrigger>
         <SheetContent className="overflow-auto">
           <SheetHeader>
-            <SheetTitle>Welcome to Khabartaazgi</SheetTitle>
+            <div>
+              <Image
+                className="h-4 w-4 object-contain"
+                width={80}
+                height={20}
+                src={icon}
+                alt="alt"
+              ></Image>{" "}
+              <SheetTitle>Welcome to Khabartaazgi</SheetTitle>
+            </div>
             <ul id="side-menu" className="float-none flex w-full flex-col">
               <li className="relative">
                 <Link
@@ -199,7 +209,7 @@ export async function Header({}: Props) {
                               {subCategory.title}
                             </Link>
                           </li>
-                        ),
+                        )
                       )}
                     </ul>
                   </li>
