@@ -203,7 +203,7 @@ const Page: React.FC<Props> = async ({ params, searchParams }) => {
             </p>
             <p className="mt-2 pb-2 font-semibold">
               Auther :
-              <a className="font-normal" href="/category/politics">
+              <a className="font-normal" href="#">
                 Kishor
               </a>
               , Last Updated :
