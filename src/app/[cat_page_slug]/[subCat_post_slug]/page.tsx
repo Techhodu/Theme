@@ -202,7 +202,7 @@ const Page: React.FC<Props> = async ({ params, searchParams }) => {
               {post?.summary}
             </p>
             <p className="mt-2 pb-2 font-semibold">
-              Auther :
+              Author :
               <a className="font-normal" href="#">
                 Kishor
               </a>
