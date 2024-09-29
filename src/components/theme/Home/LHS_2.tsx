@@ -46,8 +46,8 @@ export default async function LHS_2(Props: Props) {
                   className="max-h-[240px] w-full rounded object-cover md:col-span-1"
                   src={post?.image?.url || cover}
                   alt={post?.image?.title}
-                  width={100}
-                  height={80}
+                  width={300}
+                  height={240}
                 />
               </div>
               <div className="col-span-5 md:col-span-2">
@@ -58,7 +58,7 @@ export default async function LHS_2(Props: Props) {
                   {post?.title}
                 </h3>
                 <h4 className="line-clamp-4 text-base tracking-tight text-muted-foreground">
-                  {post?.description}
+                  {post?.summary}
                 </h4>
               </div>
             </Link>
