@@ -1,5 +1,6 @@
 import React from 'react'
 import RHS_1 from '../RHS_1'
+import RHS_2 from '../RHS_2'
 
 export default function RHS_wrapper() {
   return (
