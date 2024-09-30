@@ -33,7 +33,6 @@ export default async function LHS_1(Props: Props) {
             size="sm"
             className="absolute right-2 top-4 bg-secondary/80"
             variant="ghost"
-            onClick={handleCopy}
           >
             View More
           </Button>
