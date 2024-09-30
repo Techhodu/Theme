@@ -27,7 +27,7 @@ export default async function RHS_1(Props: Props) {
         <h3 className="mr-2 min-w-fit">Latest News</h3>
         <hr className="my-auto w-full" />
         <Link
-          className="min-w-fit rounded-full border px-2 text-primary"
+          className="min-w-fit rounded-full border px-2 bg-primary"
           href={"#"}
         >
           View More
