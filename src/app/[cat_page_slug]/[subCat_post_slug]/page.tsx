@@ -204,11 +204,10 @@ const Page: React.FC<Props> = async ({ params, searchParams }) => {
             <p className="mt-2 pb-2 font-semibold">
               Author :
               <a className="font-normal" href="#">
-                Kishor
+                {post?.createdBy}
               </a>
               , Last Updated :
               <span className="font-normal">
-               
                 {formatDateTime(post?.publicAt)}
               </span>
             </p>
