@@ -29,7 +29,7 @@ export default async function LHS_2(Props: Props) {
       <Link className="col-span-6" href={`/${Props?.slug}`}>
         <div className="flex w-full items-center justify-between">
           <h3 className="text-2xl font-semibold">{Props?.category_title}</h3>
-          <div className="min-w-fit rounded-full border px-2 bg-primary">
+          <div className="min-w-fit rounded-full border px-2 bg-primary/50">
             View More
           </div>
         </div>
