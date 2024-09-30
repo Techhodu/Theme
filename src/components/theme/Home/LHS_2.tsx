@@ -22,14 +22,16 @@ export default async function LHS_2(Props: Props) {
     posts?.map(async (post: any) => {
       const url = await buildUrl(post?._id);
       return { ...post, url };
-    }),
+    })
   );
   return (
     <div className="grid grid-cols-6 gap-3 bg-muted/85 p-3 shadow-lg">
       <Link className="col-span-6" href={`/${Props?.slug}`}>
         <div className="flex w-full items-center justify-between">
           <h3 className="text-2xl font-semibold">{Props?.category_title}</h3>
-          <div className="text-primary">View More</div>
+          <div className="min-w-fit rounded-full border px-2 bg-primary">
+            View More
+          </div>
         </div>
       </Link>
 
@@ -85,7 +87,7 @@ export default async function LHS_2(Props: Props) {
                 </div>
               </div>
             </Link>
-          ),
+          )
         )}
     </div>
   );

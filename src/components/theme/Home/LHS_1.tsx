@@ -4,7 +4,6 @@ import cover from "../../../assets/images/cover.png";
 import { getAllPost } from "@/services";
 import { formatDateTime } from "@/lib/formate";
 import { buildUrl } from "@/lib/builder";
-import { Button } from "@/components/ui/button";
 
 type Props = {
   limit?: number;
@@ -29,9 +28,9 @@ export default async function LHS_1(Props: Props) {
         <div className="flex w-full items-center justify-between">
           <h3 className="text-2xl font-semibold">{Props?.category_title}</h3>
           {/* <div className="text-primary">View More</div> */}
-          <Button size="sm" className=" " variant="ghost">
+          <div className="min-w-fit rounded-full border px-2 bg-primary">
             View More
-          </Button>
+          </div>
         </div>
       </Link>
       {postsWithUrls &&
