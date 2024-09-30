@@ -4,6 +4,7 @@ import cover from "../../../assets/images/cover.png";
 import { getAllPost } from "@/services";
 import { formatDateTime } from "@/lib/formate";
 import { buildUrl } from "@/lib/builder";
+import { Button } from "@/components/ui/button";
 
 type Props = {
   limit?: number;
