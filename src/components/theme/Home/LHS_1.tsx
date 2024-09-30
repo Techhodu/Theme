@@ -20,14 +20,22 @@ export default async function LHS_1(Props: Props) {
     posts?.map(async (post: any) => {
       const url = await buildUrl(post?._id);
       return { ...post, url };
-    }),
+    })
   );
   return (
     <div className="grid gap-3 bg-muted/85 p-3 shadow-lg sm:grid-cols-4">
       <Link className="col-span-4" href={`/${Props?.slug}`}>
         <div className="flex w-full items-center justify-between">
-          <h3 className="text-2xl font-semibold">{Props?. category_title}</h3>
-          <div className="text-primary">View More</div>
+          <h3 className="text-2xl font-semibold">{Props?.category_title}</h3>
+          {/* <div className="text-primary">View More</div> */}
+          <Button
+            size="sm"
+            className="absolute right-2 top-4 bg-secondary/80"
+            variant="ghost"
+            onClick={handleCopy}
+          >
+            View More
+          </Button>
         </div>
       </Link>
       {postsWithUrls &&
@@ -76,7 +84,7 @@ export default async function LHS_1(Props: Props) {
                 </h6>
               </div>
             </Link>
-          ),
+          )
         )}
     </div>
   );
