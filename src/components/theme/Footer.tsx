@@ -97,7 +97,7 @@ export async function Footer({}: Props) {
         <div className="mt-8 flex flex-row justify-between border-t pt-4 text-sm text-muted-foreground">
           <p>
             &copy; 2024{" "}
-            <Link href="https://techhodu.com/" className="text-primery">
+            <Link href="https://techhodu.com/" className="text-primary">
               Techhodu.
             </Link>{" "}
             All rights reserved.
