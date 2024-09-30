@@ -29,11 +29,7 @@ export default async function LHS_1(Props: Props) {
         <div className="flex w-full items-center justify-between">
           <h3 className="text-2xl font-semibold">{Props?.category_title}</h3>
           {/* <div className="text-primary">View More</div> */}
-          <Button
-            size="sm"
-            className="absolute right-2 top-4 bg-secondary/80"
-            variant="ghost"
-          >
+          <Button size="sm" className=" " variant="ghost">
             View More
           </Button>
         </div>
