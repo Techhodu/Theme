@@ -26,7 +26,7 @@ export async function Footer({}: Props) {
       {/* <div className =" bg-background min-h-full h-4"></div> */}
       <div className="container max-w-full px-4 md:px-6">
         <div className="grid grid-cols-1 gap-8 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
-          <div className="space-y-4">
+          {/* <div className="space-y-4">
             <h4 className="text-lg font-semibold">Navigation</h4>
             <nav>
               <ul className="grid grid-cols-2 gap-2">
@@ -43,7 +43,7 @@ export async function Footer({}: Props) {
                 ))}
               </ul>
             </nav>
-          </div>
+          </div> */}
           <div className="space-y-4">
             <h4 className="text-lg font-semibold">About</h4>
             <p className="text-sm leading-relaxed">
