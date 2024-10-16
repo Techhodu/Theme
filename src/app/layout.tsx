@@ -9,6 +9,8 @@ import Ticker from "@/components/theme/Ticker";
 import { GoogleAnalytics } from "@next/third-parties/google";
 import icon from "@/assets/images/icon.png";
 import type { ResolvingMetadata } from "next";
+import Script from "next/script";
+
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
@@ -27,6 +29,14 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
+       <Script
+      async
+      src={`https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7222273682589650`}
+      crossOrigin="anonymous"
+      strategy="afterInteractive"
+    />
+      {/* <Script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7222273682589650"
+     crossorigin="anonymous"></Script> */}
       <body
         className={cn(inter.className, {
           "debug-screens": process.env.NODE_ENV === "development",
