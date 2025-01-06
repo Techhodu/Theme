@@ -63,28 +63,32 @@ export async function Footer({}: Props) {
             <h4 className="text-lg font-semibold">Follow Us</h4>
             <div className="flex items-center space-x-4">
               <Link
-                href="#"
+                href="https://www.facebook.com/profile.php?id=61571234505115
+"
                 className="text-muted-foreground hover:text-foreground"
               >
                 <SiFacebook color="default" size={24} className="h-6 w-6" />
                 <span className="sr-only">Facebook</span>
               </Link>
               <Link
-                href="#"
+                href="https://x.com/khabartaazgi
+"
                 className="text-muted-foreground hover:text-foreground"
               >
                 <SiX color="default" size={24} className="h-6 w-6" />
                 <span className="sr-only">Twitter</span>
               </Link>
               <Link
-                href="#"
+                href="https://www.instagram.com/khabartaazgi/
+"
                 className="text-muted-foreground hover:text-foreground"
               >
                 <SiInstagram color="default" size={24} className="h-6 w-6" />
                 <span className="sr-only">Instagram</span>
               </Link>
               <Link
-                href="#"
+                href="https://www.youtube.com/@khabartaazgi
+"
                 className="text-muted-foreground hover:text-foreground"
               >
                 <SiYoutube color="default" size={24} className="h-6" />
