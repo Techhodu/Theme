@@ -136,7 +136,7 @@ export async function Header({}: Props) {
           </ul>
         </nav>
       </div>
-      <div className="relative max-w-md flex-1">
+      {/* <div className="relative max-w-md flex-1">
         <div className="absolute left-2.5 top-2.5 h-4 w-4 text-muted-foreground">
           <Search className="h-4 w-4" />
         </div>
@@ -145,7 +145,7 @@ export async function Header({}: Props) {
           placeholder="Search news..."
           className="w-full rounded-md bg-muted pl-8 text-muted-foreground"
         />
-      </div>
+      </div> */}
       <Sheet>
         <SheetTrigger>
           <Menu />
