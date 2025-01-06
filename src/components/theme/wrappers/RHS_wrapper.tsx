@@ -5,9 +5,7 @@ import RHS_2 from '../RHS_2'
 export default function RHS_wrapper() {
   return (
     <div className="col-span-3 flex flex-col gap-3 md:flex-row lg:col-span-1 lg:flex-col">
-         <LHS_1
-                  
-                  />
+        
           <RHS_1   key={1}
                     limit={12}
                     category={"1"}
