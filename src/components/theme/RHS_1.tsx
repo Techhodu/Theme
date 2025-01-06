@@ -25,11 +25,11 @@ export default async function RHS_1(Props: Props) {
   return (
     <div className="flex flex-col gap-3 bg-muted/85 p-3 shadow-lg">
       <div className="flex">
-        <h3 className="mr-2 min-w-fit">Latest News</h3>
+        <h3 className="mr-2 min-w-fit">राजनीतिक समाचार</h3>
         <hr className="my-auto w-full" />
         <Link
           className="min-w-fit rounded-full border px-2 bg-primary/50"
-          href={"#"}
+          href={"political-news"}
         >
           View More
         </Link>
