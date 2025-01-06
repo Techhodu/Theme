@@ -36,12 +36,12 @@ export default async function Home() {
               case 0:
                 return (
                   <LHS_1
-                    key={index}
-                    limit={5}
-                    // category={category?._id}
-                    // slug={category?.slug}
-                    category_title={"ब्रेकिंग न्यूज़"}
-                  />
+                  key={index}
+                  limit={9}
+                  // category={category?._id}
+                  slug={"#"}
+                  category_title={"ब्रेकिंग न्यूज़"}
+                />
                 );
               case 1:
                 return (

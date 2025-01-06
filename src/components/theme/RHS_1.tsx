@@ -8,8 +8,9 @@ import { buildUrl } from "@/lib/builder";
 type Props = {
   limit?: number;
   category?: string;
+  slug?: string;
+  category_title: string;
 };
-
 export default async function RHS_1(Props: Props) {
   console.log(Props)
   const postData = await getAllPost(Props);
