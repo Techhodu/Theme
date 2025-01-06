@@ -8,7 +8,7 @@ import { buildUrl } from "@/lib/builder";
 type Props = {
   limit?: number;
   category?: string;
-  slug: string;
+  slug?: string;
   category_title: string;
 };
 

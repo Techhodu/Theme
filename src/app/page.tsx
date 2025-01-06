@@ -38,9 +38,9 @@ export default async function Home() {
                   <LHS_1
                     key={index}
                     limit={5}
-                    category={category?._id}
-                    slug={category?.slug}
-                    category_title={category?.title}
+                    // category={category?._id}
+                    // slug={category?.slug}
+                    category_title={"ब्रेकिंग न्यूज़"}
                   />
                 );
               case 1:
