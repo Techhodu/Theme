@@ -29,12 +29,12 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-       <Script
-      async
-      src={`https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7222273682589650`}
-      crossOrigin="anonymous"
-      strategy="afterInteractive"
-    />
+      <Script
+        async
+        src={`https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7222273682589650`}
+        crossOrigin="anonymous"
+        strategy="afterInteractive"
+      />
       {/* <Script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7222273682589650"
      crossorigin="anonymous"></Script> */}
       <body
@@ -59,6 +59,13 @@ export default function RootLayout({
         </ThemeProvider>
       </body>
       <GoogleAnalytics gaId="G-FM5DX1QC52" />
+      <script>
+        window._izq = window._izq || []; window._izq.push(["init"]);{" "}
+      </script>
+      <Script
+        src="https://cdn.izooto.com/scripts/0e920653f977216b1d3155b686ab721091b14063.js"
+        strategy="afterInteractive"
+      ></Script>
     </html>
   );
 }
