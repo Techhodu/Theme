@@ -1,5 +1,4 @@
-import { Card } from "@/components/ui/card";
-import { Cloud } from "lucide-react";
+import { Cloud } from 'lucide-react';
 
 interface WeatherData {
   weather: Array<{
@@ -19,21 +18,42 @@ interface WeatherData {
 }
 
 export const revalidate = 60 * 5;
-async function getWeatherData(): Promise<WeatherData> {
-  const response = await fetch(
-    `https://api.openweathermap.org/data/2.5/weather?lat=28.644800&lon=77.216721&appid=${process.env.OPENWEATHER_API_KEY}`,
-    { next: { revalidate: 300 } } // Revalidate every 5 minutes
-  );
 
-  if (!response.ok) {
-    throw new Error("Failed to fetch weather data");
+async function getWeatherData(): Promise<WeatherData | null> {
+  try {
+    const apiKey = process.env.OPENWEATHER_API_KEY;
+    if (!apiKey) {
+      console.error("OPENWEATHER_API_KEY is not set");
+      return null;
+    }
+
+    const response = await fetch(
+      `https://api.openweathermap.org/data/2.5/weather?lat=28.644800&lon=77.216721&appid=${apiKey}`,
+      { next: { revalidate: 300 } }
+    );
+
+    if (!response.ok) {
+      console.error(`API responded with status: ${response.status}`);
+      return null;
+    }
+
+    return await response.json();
+  } catch (error) {
+    console.error("Error fetching weather data:", error);
+    return null;
   }
-
-  return response.json();
 }
 
 export default async function WeatherCard() {
   const weather = await getWeatherData();
+
+  if (!weather) {
+    return (
+      <div className="w-full max-w-md p-6 bg-white rounded-lg shadow-md">
+        <p className="text-red-500">Unable to fetch weather data. Please try again later.</p>
+      </div>
+    );
+  }
 
   // Convert Kelvin to Celsius and round to nearest integer
   const temp = Math.round(weather.main.temp - 273.15);
@@ -44,7 +64,7 @@ export default async function WeatherCard() {
   const windSpeed = Math.round(weather.wind.speed * 3.6);
 
   return (
-    <Card className="w-full max-w-md p-6 bg-white">
+    <div className="w-full max-w-md p-6 bg-white rounded-lg shadow-md">
       <div className="space-y-4">
         <h2 className="text-lg font-medium text-gray-600">आज का तापमान</h2>
 
@@ -69,6 +89,7 @@ export default async function WeatherCard() {
           <div>Wind: {windSpeed} km/h</div>
         </div>
       </div>
-    </Card>
+    </div>
   );
 }
+
