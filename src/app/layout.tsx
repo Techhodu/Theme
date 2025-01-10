@@ -58,9 +58,9 @@ export default function RootLayout({
           </>
         </ThemeProvider>
         <GoogleAnalytics gaId="G-FM5DX1QC52" />
-      <Script>
-        window._izq = window._izq || []; window._izq.push([&quotinit&quot]);
-      </Script>
+        <Script id="izq-init">
+          {`window._izq = window._izq || []; window._izq.push(["init"]);`}
+        </Script>
       <Script
         src="https://cdn.izooto.com/scripts/0e920653f977216b1d3155b686ab721091b14063.js"
         strategy="afterInteractive"
