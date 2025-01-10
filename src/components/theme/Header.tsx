@@ -85,7 +85,7 @@ export async function Header({}: Props) {
             </li>
             {sortedCategories.map((category: any, index: number) => {
               // Your code to handle each category
-              if (index >= 6) {
+              if (index >= 8) {
                 return;
               }
               return category.subCategories.length <= 0 ? (
