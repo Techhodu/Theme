@@ -235,7 +235,7 @@ const Page: React.FC<Props> = async ({ params, searchParams }) => {
                     <a
                       key={index}
                       className="border px-4 py-1 hover:border-border hover:bg-primary hover:text-secondary"
-                      href={tag._id}
+                      href={`/tags/${tag._id}`}
                     >
                       {tag.name}
                     </a>
