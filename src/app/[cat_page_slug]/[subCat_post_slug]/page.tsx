@@ -34,7 +34,8 @@ export async function generateMetadata(
   const previousImages = (await parent).openGraph?.images || [];
 
   return {
-    title: subCatPostData.title,
+    title: subCatPostData?.title,
+    description:subCatPostData?.summary,
     openGraph: {
       images: [subCatPostData?.image?.url || logo],
     },
