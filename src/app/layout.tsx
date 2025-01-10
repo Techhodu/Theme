@@ -57,15 +57,16 @@ export default function RootLayout({
             <Footer />
           </>
         </ThemeProvider>
-      </body>
-      <GoogleAnalytics gaId="G-FM5DX1QC52" />
-      <script>
+        <GoogleAnalytics gaId="G-FM5DX1QC52" />
+      <Script>
         window._izq = window._izq || []; window._izq.push([&quotinit&quot]);
-      </script>
+      </Script>
       <Script
         src="https://cdn.izooto.com/scripts/0e920653f977216b1d3155b686ab721091b14063.js"
         strategy="afterInteractive"
       ></Script>
+      </body>
+     
     </html>
   );
 }
