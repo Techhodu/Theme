@@ -14,7 +14,7 @@ export default function RHS_wrapper() {
                     category={"1"}
                     slug={"political-news"}
                     category_title={"राजनीतिक समाचार"} />
-          <RHS_2 limit={6} />
+          <RHS_2 limit={12} />
         </div>
   )
 }

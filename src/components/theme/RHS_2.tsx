@@ -26,12 +26,12 @@ export default async function RHS_1(Props: Props) {
       <div className="flex">
         <h3 className="mr-2 min-w-fit">Trending News</h3>
         <hr className="my-auto w-full" />
-        <Link
+        {/* <Link
           className="min-w-fit rounded-full border px-2 bg-primary/50"
           href={"#"}
         >
           View More
-        </Link>
+        </Link> */}
       </div>
       {postsWithUrls &&
         postsWithUrls?.map((post: any, index: number) => (
