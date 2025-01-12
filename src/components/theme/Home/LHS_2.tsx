@@ -76,8 +76,8 @@ export default async function LHS_2(Props: Props) {
                     className="h-full w-full object-cover"
                     src={post?.image?.url || cover}
                     alt={post?.image?.title}
-                    width={100}
-                    height={80}
+                    width={200}
+                    height={160}
                   />
                 </div>
                 <div className="col-span-2">

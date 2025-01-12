@@ -66,8 +66,8 @@ export default async function LHS_1(Props: Props) {
                   className="h-full w-full object-cover"
                   src={post?.image?.url || cover}
                   alt={post?.image?.title || "alt"}
-                  width={100}
-                  height={80}
+                  width={200}
+                  height={160}
                 />
               </div>
               <div className="p-3">

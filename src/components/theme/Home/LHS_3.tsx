@@ -46,8 +46,8 @@ export default async function LHS_3(Props: Props) {
                     className="w-full rounded object-cover sm:max-h-[400px]"
                     src={post?.image?.url || cover}
                     alt={post?.image?.title}
-                    width={100}
-                    height={80}
+                    width={300}
+                    height={240}
                   />
                   <div className="p-3">
                     <h3 className="my-2 line-clamp-2 text-xl font-semibold leading-loose tracking-tight lg:text-xl">
@@ -72,8 +72,8 @@ export default async function LHS_3(Props: Props) {
                           className="h-full w-full object-cover"
                           src={post?.image?.url || cover}
                           alt={post?.image?.title}
-                          width={100}
-                          height={80}
+                          width={200}
+                          height={160}
                         />
                       </div>
                       <div className="col-span-2">

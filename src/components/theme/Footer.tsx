@@ -26,10 +26,10 @@ export async function Footer({}: Props) {
       {/* <div className =" bg-background min-h-full h-4"></div> */}
       <div className="container max-w-full px-4 md:px-6">
         <div className="grid grid-cols-1 gap-8 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
-           <div className="space-y-4">
+          <div className="space-y-4">
             <h4 className="text-lg font-semibold">Navigation</h4>
             <nav>
-              <ul className="grid grid-cols-2 gap-2">
+              <ul className="grid grid-cols-1 gap-2">
                 {pages?.map((page: any, index: any) => (
                   <li
                     className="col-span-1 flex items-center text-base"
@@ -43,7 +43,7 @@ export async function Footer({}: Props) {
                 ))}
               </ul>
             </nav>
-          </div> 
+          </div>
           <div className="space-y-4">
             <h4 className="text-lg font-semibold">About</h4>
             <p className="text-sm leading-relaxed">
@@ -51,14 +51,14 @@ export async function Footer({}: Props) {
               providing in-depth coverage of the latest events and trends.
             </p>
           </div>
-          <div className="space-y-4">
+          {/* <div className="space-y-4">
             <h4 className="text-lg font-semibold">Contact</h4>
             <p className="text-sm leading-relaxed">
               support@techhodu.com
               <br />
               Phone: +91 7263025531
             </p>
-          </div>
+          </div> */}
           <div className="space-y-4">
             <h4 className="text-lg font-semibold">Follow Us</h4>
             <div className="flex items-center space-x-4">
@@ -100,11 +100,10 @@ export async function Footer({}: Props) {
 
         <div className="mt-8 flex flex-row justify-between border-t pt-4 text-sm text-muted-foreground">
           <p>
-            &copy; 2024{" "}
+            Brought to you by{" "}
             <Link href="https://techhodu.com/" className="text-primary">
               Techhodu.
-            </Link>{" "}
-            All rights reserved.
+            </Link>
           </p>
           <ModeToggle />
         </div>
