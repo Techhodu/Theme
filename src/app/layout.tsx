@@ -52,7 +52,7 @@ export default function RootLayout({
             <Header />
             <article className="mx-4 py-6 md:mx-16 lg:mx-24 lg:py-3 xl:mx-36 2xl:mx-auto 2xl:max-w-7xl">
               <Ticker />
-              <MGIDWidget/>
+              {/* <MGIDWidget/> */}
               {children}
             </article>
             <Footer />

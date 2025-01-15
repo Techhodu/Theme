@@ -21,7 +21,7 @@ import Image from "next/image";
 import RHS_wrapper from "@/components/theme/wrappers/RHS_wrapper";
 import type { Metadata, ResolvingMetadata } from "next";
 import { formatDateTime } from "@/lib/formate";
-
+import MGIDWidget from "@/components/ads/mgid";
 export async function generateMetadata(
   { params, searchParams }: Props,
   parent: ResolvingMetadata
@@ -35,7 +35,7 @@ export async function generateMetadata(
 
   return {
     title: subCatPostData?.title,
-    description:subCatPostData?.summary,
+    description: subCatPostData?.summary,
     openGraph: {
       images: [subCatPostData?.image?.url || logo],
     },
@@ -220,9 +220,9 @@ const Page: React.FC<Props> = async ({ params, searchParams }) => {
               height={400}
               priority
             />
-
+            <MGIDWidget widgetId="1725109" />
             <Blocks blocks={post.content?.blocks || []} />
-
+            <MGIDWidget widgetId="1725138" />
             <div className="mt-8">
               <div className="border-b">
                 <h2 className="w-min whitespace-nowrap rounded-t bg-primary px-6 py-2 text-secondary">
