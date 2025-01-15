@@ -14,7 +14,7 @@ const MGIDWidget = ({ widgetId = "1725109" }) => {
     <>
       <Script 
         src="https://jsc.mgid.com/site/1008293.js"
-        strategy="worker"
+        strategy="lazyOnload"
         onError={(e) => {
           console.error('Error loading MGID script:', e);
         }}
