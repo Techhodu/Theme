@@ -10,7 +10,7 @@ import { GoogleAnalytics } from "@next/third-parties/google";
 import icon from "@/assets/images/icon.png";
 import type { ResolvingMetadata } from "next";
 import Script from "next/script";
-
+import MGIDWidget from "@/components/ads/mgid";
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
@@ -52,6 +52,7 @@ export default function RootLayout({
             <Header />
             <article className="mx-4 py-6 md:mx-16 lg:mx-24 lg:py-3 xl:mx-36 2xl:mx-auto 2xl:max-w-7xl">
               <Ticker />
+              <MGIDWidget/>
               {children}
             </article>
             <Footer />
@@ -65,6 +66,7 @@ export default function RootLayout({
         src="https://cdn.izooto.com/scripts/0e920653f977216b1d3155b686ab721091b14063.js"
         strategy="afterInteractive"
       ></Script>
+     
       </body>
      
     </html>
