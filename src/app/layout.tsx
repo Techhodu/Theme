@@ -1,4 +1,3 @@
-import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import "./globals.css";
 import { ThemeProvider } from "./providers/theme-provider";
@@ -13,14 +12,7 @@ import Script from "next/script";
 import MGIDWidget from "@/components/ads/mgid";
 const inter = Inter({ subsets: ["latin"] });
 
-export const metadata: Metadata = {
-  title: "Khabartaazgi: News That Matters, Stories That Inspire",
-  description:
-    "Khabartaazgi News is a leading source of news and information, providing in-depth coverage of the latest events and trends.",
-  openGraph: {
-    images: [icon.src],
-  },
-};
+
 // const Layout = ({ children }: LayoutProps): JSX.Element => {
 export default function RootLayout({
   children,

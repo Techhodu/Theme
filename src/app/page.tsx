@@ -3,7 +3,7 @@ import LHS_2 from "@/components/theme/Home/LHS_2";
 import LHS_3 from "@/components/theme/Home/LHS_3";
 import RHS_1 from "@/components/theme/RHS_1";
 import Ticker from "@/components/theme/Ticker";
-
+import type { Metadata } from "next";
 import Image from "next/image";
 import { getCategories, getAllPost } from "@/services";
 
@@ -12,6 +12,17 @@ import RHS_wrapper from "@/components/theme/wrappers/RHS_wrapper";
 
 export const revalidate = 60 * 15;
 
+export const metadata: Metadata = {
+  title: "Khabartaazgi: News That Matters, Stories That Inspire",
+  description:
+    "Khabartaazgi News is a leading source of news and information, providing in-depth coverage of the latest events and trends.",
+  openGraph: {
+    images: [icon.src],
+  },
+  alternates: {
+    canonical: 'https://khabartaazgi.com',
+}
+};
 export default async function Home() {
   const categoriesData = await getCategories();
   const categories: any[] = categoriesData?.categories || [];
