@@ -6,7 +6,7 @@ import Ticker from "@/components/theme/Ticker";
 import type { Metadata } from "next";
 import Image from "next/image";
 import { getCategories, getAllPost } from "@/services";
-
+import icon from "@/assets/images/icon.png";
 import BreadcrumbWraper from "@/components/theme/BreadcrumbWraper";
 import RHS_wrapper from "@/components/theme/wrappers/RHS_wrapper";
 

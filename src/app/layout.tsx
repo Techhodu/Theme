@@ -6,7 +6,6 @@ import { Header } from "@/components/theme/Header";
 import { Footer } from "@/components/theme/Footer";
 import Ticker from "@/components/theme/Ticker";
 import { GoogleAnalytics } from "@next/third-parties/google";
-import icon from "@/assets/images/icon.png";
 import type { ResolvingMetadata } from "next";
 import Script from "next/script";
 import MGIDWidget from "@/components/ads/mgid";
