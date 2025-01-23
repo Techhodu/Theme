@@ -78,3 +78,25 @@
     --chart-5: 340 75% 55%;
   }
 }
+
+/* Define neon colors */
+:root {
+  --neon-500: #0fa;
+  --neon-400: #0ff;
+  --neon-300: #0cf;
+}
+
+/* Neon glow effect */
+.neon-glow {
+  text-shadow: 0 0 5px var(--neon-500), 0 0 10px var(--neon-500), 0 0 20px var(--neon-500);
+}
+
+/* Neon shadow for the card */
+.shadow-neon-lg {
+  box-shadow: 0 0 10px var(--neon-500), 0 0 20px var(--neon-500), 0 0 40px var(--neon-500);
+}
+
+/* Neon border color */
+.border-neon-500 {
+  border-color: var(--neon-500);
+}
