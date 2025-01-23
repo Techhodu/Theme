@@ -4,7 +4,8 @@ import BreadcrumbWraper from "@/components/theme/BreadcrumbWraper";
 import RHS_1 from "@/components/theme/RHS_1";
 import List from "@/components/theme/List";
 import { itemFinder } from "@/lib/finder";
-import { getAllPost, getStaticPages } from "@/services";
+import { getAllPost, getStaticPages,userDetails } from "@/services";
+import AuthInfoCard from "@/components/auth-info-card";
 import {
   Pagination,
   PaginationContent,
@@ -41,19 +42,23 @@ const Page: React.FC<Props> = async ({ params, searchParams }) => {
   const currentListPage = Number(searchParams?.page) || 1;
 
   let postsData: PostsDataType = {};
-  let catPageSlug= "PostsDataType" ;
+  let catPageSlug = "PostsDataType";
 
   const createdBy = params.createdBy;
   postsData = await getAllPost({
     limit: 10,
     createdBy: createdBy,
   });
+  const userData = await userDetails(createdBy);
+  const user = userData?.user
+
 
   const pageCount = Number(postsData?.Pagination?.pageCount) || 1;
 
   return (
     <>
       <BreadcrumbWraper params={params} />
+      <AuthInfoCard user={user} />
       <div className="mt-3 grid min-h-screen gap-2 lg:grid-cols-3">
         <main className="col-span-3 grid h-fit flex-row gap-3 md:grid-cols-2 lg:col-span-2">
           {postsData.posts?.map((post, index) => (

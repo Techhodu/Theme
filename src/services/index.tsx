@@ -4,3 +4,4 @@ export * from './subCategory';
 export * from './post';
 // export * from './tag';
 export * from './staticPage';
+export * from './user';
