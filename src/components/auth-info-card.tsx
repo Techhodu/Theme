@@ -31,14 +31,14 @@ export default function AuthInfoCard({ user }: AuthInfoCardProps) {
       <CardContent>
         <p className="text-sm text-muted-foreground mb-4">{user?.description}</p>
         <div className="grid gap-4">
-          <div className="flex items-center justify-between">
+          {/* <div className="flex items-center justify-between">
             <span className="font-semibold">Gender:</span>
             <Badge variant="secondary">{user?.gender}</Badge>
-          </div>
-          <div className="flex items-center justify-between">
+          </div> */}
+          {/* <div className="flex items-center justify-between">
             <span className="font-semibold">Date of Birth</span>
             <span>{user.dob}</span>
-          </div>
+          </div> */}
         </div>
       </CardContent>
     </Card>

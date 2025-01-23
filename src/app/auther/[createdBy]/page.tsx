@@ -58,9 +58,10 @@ const Page: React.FC<Props> = async ({ params, searchParams }) => {
   return (
     <>
       <BreadcrumbWraper params={params} />
-      <AuthInfoCard user={user} />
+     
       <div className="mt-3 grid min-h-screen gap-2 lg:grid-cols-3">
         <main className="col-span-3 grid h-fit flex-row gap-3 md:grid-cols-2 lg:col-span-2">
+        <AuthInfoCard user={user} />
           {postsData.posts?.map((post, index) => (
             <List key={index} post={post} cat_subCat_slug={catPageSlug} />
           ))}
