@@ -1,6 +1,7 @@
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import { Badge } from "@/components/ui/badge";
+import HTMLReactParser from "html-react-parser";
 
 interface AuthInfoCardProps {
   user: {
@@ -29,7 +30,7 @@ export default function AuthInfoCard({ user }: AuthInfoCardProps) {
         </div>
       </CardHeader>
       <CardContent>
-        <p className="text-sm text-muted-foreground mb-4">{user?.description}</p>
+        <p className="text-sm text-muted-foreground mb-4"> {HTMLReactParser(user?.description)}</p>
         <div className="grid gap-4">
           {/* <div className="flex items-center justify-between">
             <span className="font-semibold">Gender:</span>
