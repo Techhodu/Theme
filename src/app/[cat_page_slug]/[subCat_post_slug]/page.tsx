@@ -204,8 +204,8 @@ const Page: React.FC<Props> = async ({ params, searchParams }) => {
             </p>
             <p className="mt-2 pb-2 font-semibold">
               Author :
-              <a className="font-normal" href="#">
-                {"Sanjeev Singh"}
+              <a className="font-normal" href={`/auther/${post?.createdBy?._id}`}>
+                {post?.createdBy?.name}
               </a>
               , Last Updated :
               <span className="font-normal">

@@ -3,9 +3,10 @@ type params = {
   category?: string;
   subCategory?: string;
   tags?: string;
+  createdBy?: string;
 };
 // subCategory
-export const getAllPost = async ({ limit, category, subCategory ,tags}: params) => {
+export const getAllPost = async ({ limit, category, subCategory ,tags,createdBy}: params) => {
   let query: string = "";
   if (limit) {
     query += `limit=${limit}`;
@@ -14,6 +15,9 @@ export const getAllPost = async ({ limit, category, subCategory ,tags}: params) 
   }
   if (category) {
     query += `&category=${category}`;
+  }
+  if (createdBy) {
+    query += `&createdBy=${createdBy}`;
   }
   if (tags) {
     query += `&tags=${tags}`;
