@@ -72,14 +72,14 @@ const Page: React.FC<Props> = async ({ params, searchParams }) => {
                 {currentListPage > 1 && (
                   <PaginationItem>
                     <PaginationPrevious
-                      href={`/${createdBy}?page=${currentListPage - 1}`}
+                      href={`/author/${createdBy}?page=${currentListPage - 1}`}
                     />
                   </PaginationItem>
                 )}
 
                 {currentListPage !== 1 && (
                   <PaginationItem>
-                    <PaginationLink href={`/${createdBy}`}>1</PaginationLink>
+                    <PaginationLink href={`/author/${createdBy}`}>1</PaginationLink>
                   </PaginationItem>
                 )}
 
@@ -93,7 +93,7 @@ const Page: React.FC<Props> = async ({ params, searchParams }) => {
                     {currentListPage > 2 && (
                       <PaginationItem>
                         <PaginationLink
-                          href={`/${createdBy}?page=${currentListPage - 1}`}
+                          href={`/author/${createdBy}?page=${currentListPage - 1}`}
                         >
                           {currentListPage - 1}
                         </PaginationLink>
@@ -104,7 +104,7 @@ const Page: React.FC<Props> = async ({ params, searchParams }) => {
 
                 <PaginationItem>
                   <PaginationLink
-                    href={`/${createdBy}?page=${currentListPage}`}
+                    href={`/author/${createdBy}?page=${currentListPage}`}
                     isActive
                   >
                     {currentListPage}
@@ -116,7 +116,7 @@ const Page: React.FC<Props> = async ({ params, searchParams }) => {
                     {currentListPage < pageCount && (
                       <PaginationItem>
                         <PaginationLink
-                          href={`/${createdBy}?page=${currentListPage + 1}`}
+                          href={`/author/${createdBy}?page=${currentListPage + 1}`}
                         >
                           {currentListPage + 1}
                         </PaginationLink>
@@ -132,7 +132,7 @@ const Page: React.FC<Props> = async ({ params, searchParams }) => {
 
                 {currentListPage < pageCount && (
                   <PaginationItem>
-                    <PaginationLink href={`/${createdBy}?page=${pageCount}`}>
+                    <PaginationLink href={`/author/${createdBy}?page=${pageCount}`}>
                       {pageCount}
                     </PaginationLink>
                   </PaginationItem>
@@ -141,7 +141,7 @@ const Page: React.FC<Props> = async ({ params, searchParams }) => {
                 {currentListPage < pageCount && (
                   <PaginationItem>
                     <PaginationNext
-                      href={`/${createdBy}?page=${currentListPage + 1}`}
+                      href={`/author/${createdBy}?page=${currentListPage + 1}`}
                     />
                   </PaginationItem>
                 )}
