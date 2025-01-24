@@ -42,7 +42,7 @@ const Page: React.FC<Props> = async ({ params, searchParams }) => {
   const currentListPage = Number(searchParams?.page) || 1;
 
   let postsData: PostsDataType = {};
-  let catPageSlug = "PostsDataType";
+ 
 
   const createdBy = params.createdBy;
   postsData = await getAllPost({
@@ -63,7 +63,7 @@ const Page: React.FC<Props> = async ({ params, searchParams }) => {
         <main className="col-span-3 grid h-fit flex-row gap-3 md:grid-cols-2 lg:col-span-2">
         <AuthInfoCard user={user} />
           {postsData.posts?.map((post, index) => (
-            <List key={index} post={post} cat_subCat_slug={catPageSlug} />
+            <List key={index} post={post} cat_subCat_slug={createdBy} />
           ))}
 
           {pageCount > 1 && (
@@ -72,14 +72,14 @@ const Page: React.FC<Props> = async ({ params, searchParams }) => {
                 {currentListPage > 1 && (
                   <PaginationItem>
                     <PaginationPrevious
-                      href={`/${catPageSlug}?page=${currentListPage - 1}`}
+                      href={`/${createdBy}?page=${currentListPage - 1}`}
                     />
                   </PaginationItem>
                 )}
 
                 {currentListPage !== 1 && (
                   <PaginationItem>
-                    <PaginationLink href={`/${catPageSlug}`}>1</PaginationLink>
+                    <PaginationLink href={`/${createdBy}`}>1</PaginationLink>
                   </PaginationItem>
                 )}
 
@@ -93,7 +93,7 @@ const Page: React.FC<Props> = async ({ params, searchParams }) => {
                     {currentListPage > 2 && (
                       <PaginationItem>
                         <PaginationLink
-                          href={`/${catPageSlug}?page=${currentListPage - 1}`}
+                          href={`/${createdBy}?page=${currentListPage - 1}`}
                         >
                           {currentListPage - 1}
                         </PaginationLink>
@@ -104,7 +104,7 @@ const Page: React.FC<Props> = async ({ params, searchParams }) => {
 
                 <PaginationItem>
                   <PaginationLink
-                    href={`/${catPageSlug}?page=${currentListPage}`}
+                    href={`/${createdBy}?page=${currentListPage}`}
                     isActive
                   >
                     {currentListPage}
@@ -116,7 +116,7 @@ const Page: React.FC<Props> = async ({ params, searchParams }) => {
                     {currentListPage < pageCount && (
                       <PaginationItem>
                         <PaginationLink
-                          href={`/${catPageSlug}?page=${currentListPage + 1}`}
+                          href={`/${createdBy}?page=${currentListPage + 1}`}
                         >
                           {currentListPage + 1}
                         </PaginationLink>
@@ -132,7 +132,7 @@ const Page: React.FC<Props> = async ({ params, searchParams }) => {
 
                 {currentListPage < pageCount && (
                   <PaginationItem>
-                    <PaginationLink href={`/${catPageSlug}?page=${pageCount}`}>
+                    <PaginationLink href={`/${createdBy}?page=${pageCount}`}>
                       {pageCount}
                     </PaginationLink>
                   </PaginationItem>
@@ -141,7 +141,7 @@ const Page: React.FC<Props> = async ({ params, searchParams }) => {
                 {currentListPage < pageCount && (
                   <PaginationItem>
                     <PaginationNext
-                      href={`/${catPageSlug}?page=${currentListPage + 1}`}
+                      href={`/${createdBy}?page=${currentListPage + 1}`}
                     />
                   </PaginationItem>
                 )}

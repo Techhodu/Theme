@@ -18,7 +18,7 @@ interface AuthInfoCardProps {
 
 export default function AuthInfoCard({ user }: AuthInfoCardProps) {
   return (
-    <Card className="w-full col-span-2">
+    <Card className="w-full md:col-span-2">
       <CardHeader className="flex flex-row items-center gap-4">
         <Avatar className="h-16 w-16">
           <AvatarImage src={user?.photo} alt={user.name} />
