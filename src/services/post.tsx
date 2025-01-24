@@ -7,7 +7,7 @@ type params = {
   page?: string | number;
 };
 // subCategory
-export const getAllPost = async ({ limit, category, subCategory ,tags,createdBy}: params) => {
+export const getAllPost = async ({ limit, category, subCategory ,tags,createdBy,page}: params) => {
   let query: string = "";
   if (limit) {
     query += `limit=${limit}`;
