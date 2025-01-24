@@ -45,8 +45,10 @@ const Page: React.FC<Props> = async ({ params, searchParams }) => {
  
 
   const createdBy = params.createdBy;
+  const page = params.page;
   postsData = await getAllPost({
     limit: 10,
+    page:page,
     createdBy: createdBy,
   });
   const userData = await userDetails(createdBy);
