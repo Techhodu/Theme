@@ -4,6 +4,7 @@ type params = {
   subCategory?: string;
   tags?: string;
   createdBy?: string;
+  page?: string | number;
 };
 // subCategory
 export const getAllPost = async ({ limit, category, subCategory ,tags,createdBy}: params) => {
@@ -21,6 +22,9 @@ export const getAllPost = async ({ limit, category, subCategory ,tags,createdBy}
   }
   if (tags) {
     query += `&tags=${tags}`;
+  }
+  if (page) {
+    query += `&page=${page}`;
   }
 
   if (subCategory) {
