@@ -6,13 +6,25 @@ import { Header } from "@/components/theme/Header";
 import { Footer } from "@/components/theme/Footer";
 import Ticker from "@/components/theme/Ticker";
 import { GoogleAnalytics } from "@next/third-parties/google";
-import type { ResolvingMetadata } from "next";
+import type { Metadata, ResolvingMetadata } from "next";
 import Script from "next/script";
 import MGIDWidget from "@/components/ads/mgid";
+import Head from 'next/head'
+
 const inter = Inter({ subsets: ["latin"] });
 
 
 // const Layout = ({ children }: LayoutProps): JSX.Element => {
+
+export const metadata: Metadata = {
+  title: "Khabartaazgi: News That Matters, Stories That Inspire",
+  description:
+    "Khabartaazgi News is a leading source of news and information, providing in-depth coverage of the latest events and trends.",
+  other: {
+    custom: 'meta',
+  },
+};
+
 export default function RootLayout({
   children,
 }: Readonly<{
@@ -20,15 +32,20 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <Script
-        async
-        src={`https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7222273682589650`}
-        crossOrigin="anonymous"
-        strategy="afterInteractive"
-      />
-      {/* <Script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7222273682589650"
-     crossorigin="anonymous"></Script> */}
+
+
+
+      <head>
+      <meta name="google-adsense-account" content="ca-pub-7222273682589650"/>
+        <Script
+          async
+          src={`https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7222273682589650`}
+          crossOrigin="anonymous"
+          strategy="afterInteractive"
+        />
+      </head>
       <body
+
         className={cn(inter.className, {
           "debug-screens": process.env.NODE_ENV === "development",
         })}
@@ -53,13 +70,14 @@ export default function RootLayout({
         <Script id="izq-init">
           {`window._izq = window._izq || []; window._izq.push(["init"]);`}
         </Script>
-      <Script
-        src="https://cdn.izooto.com/scripts/0e920653f977216b1d3155b686ab721091b14063.js"
-        strategy="afterInteractive"
-      ></Script>
-     
+        <Script
+          src="https://cdn.izooto.com/scripts/0e920653f977216b1d3155b686ab721091b14063.js"
+          strategy="afterInteractive"
+        ></Script>
+
+
       </body>
-     
+
     </html>
   );
 }

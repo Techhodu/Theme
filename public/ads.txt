@@ -1,4 +1,4 @@
-google.com, pub-7222273682589650, DIRECT, f08c47fec0942fa0
+google.com, pub-7222273682589650, DIRECT, f08c47fec0942fa0  
 
 #YieldMonk
 google.com, pub-9422585382673566, RESELLER, f08c47fec0942fa0
