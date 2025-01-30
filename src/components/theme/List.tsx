@@ -16,7 +16,7 @@ export default async function List({ post, cat_subCat_slug }: Props) {
   return (
     <>
       {post && (
-        <article className="group relative col-span-1 h-fit overflow-hidden rounded-lg shadow-md transition-all duration-300 hover:shadow-xl">
+        <article className="group relative col-span-1  overflow-hidden rounded-lg shadow-md transition-all duration-300 hover:shadow-xl">
           <Link
             href={`${post.url || "URL creation failed"}`}
             className="absolute inset-0 z-10"
