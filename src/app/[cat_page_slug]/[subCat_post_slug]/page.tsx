@@ -22,20 +22,17 @@ import RHS_wrapper from "@/components/theme/wrappers/RHS_wrapper";
 import type { Metadata, ResolvingMetadata } from "next";
 import { formatDateTime } from "@/lib/formate";
 import MGIDWidget from "@/components/ads/mgid";
+
 export async function generateMetadata(
-  { params, searchParams }: Props,
+  { params }: Props,
   parent: ResolvingMetadata
 ): Promise<Metadata> {
-  // read route params
   const subCat_post_slug = params.subCat_post_slug;
   const subCatPostData = await itemFinder(subCat_post_slug, 2, "object");
 
-  // optionally access and extend (rather than replace) parent metadata
-  const previousImages = (await parent).openGraph?.images || [];
-
   return {
-    title: subCatPostData?.title,
-    description: subCatPostData?.summary,
+    title: subCatPostData?.title || "Default Title",
+    description: subCatPostData?.summary || "Default description",
     openGraph: {
       images: [subCatPostData?.image?.url || logo],
     },
@@ -63,11 +60,10 @@ type Props = {
 };
 
 export const revalidate = 60 * 15;
+
 const Page: React.FC<Props> = async ({ params, searchParams }) => {
   const currentListPage = Number(searchParams?.page) || 1;
-
   const catPageSlug = params.cat_page_slug;
-
   const subCat_post_slug = params?.subCat_post_slug;
 
   const subCatPostData = await itemFinder(subCat_post_slug, 2, "object");
@@ -108,75 +104,17 @@ const Page: React.FC<Props> = async ({ params, searchParams }) => {
                     </PaginationItem>
                   )}
 
-                  {/* First Page Link */}
-                  {currentListPage !== 1 && (
-                    <PaginationItem>
-                      <PaginationLink href={`/${catPageSlug}`}>
-                        1
-                      </PaginationLink>
-                    </PaginationItem>
-                  )}
-
-                  {/* Display Previous Page Numbers and Ellipses */}
-                  {currentListPage > 2 && (
-                    <>
-                      {currentListPage > 3 && (
-                        <PaginationItem>
-                          <PaginationEllipsis />
-                        </PaginationItem>
-                      )}
-                      {currentListPage > 2 && (
-                        <PaginationItem>
-                          <PaginationLink
-                            href={`/${catPageSlug}?page=${currentListPage - 1}`}
-                          >
-                            {currentListPage - 1}
-                          </PaginationLink>
-                        </PaginationItem>
-                      )}
-                    </>
-                  )}
-
-                  {/* Current Page */}
-                  <PaginationItem>
-                    <PaginationLink
-                      href={`/${catPageSlug}?page=${currentListPage}`}
-                      isActive
-                    >
-                      {currentListPage}
-                    </PaginationLink>
-                  </PaginationItem>
-
-                  {/* Display Next Page Numbers and Ellipses */}
-                  {currentListPage < pageCount - 1 && (
-                    <>
-                      {currentListPage < pageCount && (
-                        <PaginationItem>
-                          <PaginationLink
-                            href={`/${catPageSlug}?page=${currentListPage + 1}`}
-                          >
-                            {currentListPage + 1}
-                          </PaginationLink>
-                        </PaginationItem>
-                      )}
-                      {currentListPage < pageCount - 2 && (
-                        <PaginationItem>
-                          <PaginationEllipsis />
-                        </PaginationItem>
-                      )}
-                    </>
-                  )}
-
-                  {/* Last Page Link */}
-                  {currentListPage < pageCount && (
-                    <PaginationItem>
+                  {/* Display Page Links */}
+                  {[...Array(pageCount)].map((_, i) => (
+                    <PaginationItem key={i}>
                       <PaginationLink
-                        href={`/${catPageSlug}?page=${pageCount}`}
+                        href={`/${catPageSlug}?page=${i + 1}`}
+                        isActive={i + 1 === currentListPage}
                       >
-                        {pageCount}
+                        {i + 1}
                       </PaginationLink>
                     </PaginationItem>
-                  )}
+                  ))}
 
                   {/* Next Page Link */}
                   {currentListPage < pageCount && (
@@ -194,8 +132,6 @@ const Page: React.FC<Props> = async ({ params, searchParams }) => {
 
         {post.title && (
           <main className="col-span-3 grid h-fit flex-row gap-3 lg:col-span-2">
-            {/* Page Content */}
-
             <h1 className="lg:font-4xl text-3xl font-bold leading-relaxed">
               {post?.title}
             </h1>
@@ -215,13 +151,13 @@ const Page: React.FC<Props> = async ({ params, searchParams }) => {
             <Image
               src={post?.image?.url || cover}
               alt={post?.image?.title || "Article Image"}
-              className=" w-full"
+              className="w-full"
               width={700}
               height={400}
               priority
             />
             <MGIDWidget widgetId="1725109" />
-            <Blocks blocks={post.content?.blocks || []} />
+            {post?.content?.blocks?.length > 0 && <Blocks blocks={post.content.blocks} />}
             <MGIDWidget widgetId="1725138" />
             <div className="mt-8">
               <div className="border-b">
@@ -252,3 +188,4 @@ const Page: React.FC<Props> = async ({ params, searchParams }) => {
 };
 
 export default Page;
+
