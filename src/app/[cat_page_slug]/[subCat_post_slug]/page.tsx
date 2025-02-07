@@ -50,7 +50,10 @@ export async function generateMetadata(
   { params }: Props,
   parent: ResolvingMetadata,
 ): Promise<Metadata> {
-  const post = await postDetails(params.subCat_post_slug);
+  const slug = params?.subCat_post_slug;
+  const id = slug?.split("-")?.pop();
+  const postData = await postDetails(id);
+  const post: Post = postData?.post;
 
   if (!post) {
     return {
