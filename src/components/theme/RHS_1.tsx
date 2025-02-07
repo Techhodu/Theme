@@ -12,7 +12,7 @@ type Props = {
   category_title: string;
 };
 export default async function RHS_1(Props: Props) {
-  console.log(Props)
+  // console.log(Props)
   const postData = await getAllPost(Props);
   const posts: [any] = postData?.posts || [];
 

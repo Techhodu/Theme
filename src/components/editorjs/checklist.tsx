@@ -17,7 +17,7 @@ export interface ChecklistBlockData {
 }
 
 export function ChecklistBlock({ data, className }: ChecklistType) {
-  console.log(data.items); // Just for debugging, you can remove this line in production
+  // console.log(data.items); // Just for debugging, you can remove this line in production
 
   return (
     <>
