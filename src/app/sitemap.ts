@@ -2,6 +2,10 @@ import { buildUrl } from "@/lib/builder";
 import { getAllPost } from "@/services";
 import type { MetadataRoute } from "next";
 
+// Add these imports
+import { NextResponse } from 'next/server';
+export const revalidate = 900; // 15 minutes in seconds
+
 type SitemapEntry = {
   url: string;
   lastModified: string;
@@ -13,7 +17,6 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   try {
     const postData = await getAllPost({ limit: 2000 });
     const posts: any[] = postData?.posts || [];
-
     const postsWithUrls = await Promise.all(
       posts.map(async (post: any) => {
         try {
@@ -22,14 +25,12 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
             console.error(`Failed to build URL for post ID: ${post?._id}`);
             return null;
           }
-
           const entry: SitemapEntry = {
             url: `${process.env.NEXT_PUBLIC_URL}${url}`,
             lastModified: post?.updatedAt || post?.createdAt || new Date().toISOString(),
             changeFrequency: 'daily',
             priority: 0.7
           };
-
           return entry;
         } catch (error) {
           console.error(`Error processing post ID ${post?._id}:`, error);
@@ -53,6 +54,10 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
       }
     ];
 
+    // Set cache headers in the response
+    const response = NextResponse.json([...staticRoutes, ...validUrls]);
+    response.headers.set('Cache-Control', 'public, s-maxage=900, stale-while-revalidate=59');
+    
     return [...staticRoutes, ...validUrls];
   } catch (error) {
     console.error('Error generating sitemap:', error);
