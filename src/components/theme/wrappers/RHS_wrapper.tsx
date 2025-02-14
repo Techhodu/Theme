@@ -3,10 +3,12 @@ import RHS_1 from "../RHS_1";
 import RHS_2 from "../RHS_2";
 import WeatherCard from "@/components/theme/weather-card";
 import MGIDWidget from "@/components/ads/mgid";
+import Customad from "../Customad";
 
 export default function RHS_wrapper() {
   return (
     <div className="col-span-3 flex flex-col gap-3 md:flex-row lg:col-span-1 lg:flex-col">
+      <Customad/>
       <WeatherCard />
 
       <RHS_1
